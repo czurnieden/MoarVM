@@ -1159,7 +1159,7 @@ MVMObject * MVM_bigint_rand(MVMThreadContext *tc, MVMObject *type, MVMObject *b)
     MVMint8 use_small_arithmetic = 0;
     MVMint8 have_to_negate = 0;
     MVMint32 smallint_max = 0;
-
+    mp_digit result_int;
 
     if (MVM_BIGINT_IS_BIG(bb)) {
         if (can_be_smallint(bb->u.bigint)) {
